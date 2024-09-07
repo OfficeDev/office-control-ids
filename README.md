@@ -1,10 +1,13 @@
 # Office Control IDs
 
-The files in this repo provide the official Office IDs of Office controls and control groups that can be added to custom groups and ribbon tabs by Office Add-ins. Specifically, these IDs are used as the value of the `id` property in the [OfficeControl](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/group#control) and [OfficeGroup](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/customtab#officegroup) elements of the add-in's manifest.
+The files in this repo provide the official Office IDs of Office controls and control groups that can be added to custom groups and ribbon tabs by Office Add-ins. Specifically, these IDs are used in the add-in manifest. Where they are used varies depending on the type of manifest that the add-in uses:
+
+- **Unified manifest for Microsoft 365**: The IDs are used as the value of the "builtInControlId" and "builtInGroupId" properties in the ["extensions.ribbons.tabs"](https://learn.microsoft.com/en-us/microsoftteams/platform/resources/schema/manifest-schema#extensionsribbons) section of the manifest.
+- **Add-in only manifest**: The IDs are used as the value of the `id` attribute in the [OfficeControl](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/group#control) and [OfficeGroup](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/customtab#officegroup) elements of the manifest.
 
 For an overview of the feature, see [Integrate built-in Office buttons into custom control groups and tabs](https://docs.microsoft.com/office/dev/add-ins/design/built-in-button-integration).
 
-> NOTE: There are limits on which controls, which Office applications, and which platforms support the `<OfficeControl>` and `<OfficeGroup>` elements. The files in this repo do not include IDs for unsupported scenarios.
+> NOTE: There are limits on which controls, which Office applications, and which platforms support the manifest markup described above. The files in this repo do not include IDs for unsupported scenarios.
 >
 > In particular, only PowerPoint add-ins are supported at this time.
 
